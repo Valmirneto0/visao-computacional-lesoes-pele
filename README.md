@@ -40,7 +40,7 @@ models/         pesos (ignorado pelo git)
 
 ## Ambiente
 
-Windows + AMD RX 9060 XT: `scripts/setup_env.ps1` (venv Python 3.12 + PyTorch ROCm; fallback CPU). Dependências em `requirements.txt`.
+Windows + AMD RX 9060 XT: `scripts/setup_env.ps1` (venv Python 3.12 em `%USERPROFILE%\venvs\skinlesion` — fora do projeto porque o SDK ROCm não aceita espaço no caminho — + PyTorch 2.9.1 ROCm 7.2.1; fallback CPU). Dependências em `requirements.txt`.
 
 ## Marcos
 

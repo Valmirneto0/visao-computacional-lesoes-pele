@@ -2,9 +2,10 @@
 # Pré-requisito: Python 3.12 instalado (python.org). Python 3.14 não tem wheels de torch/ROCm garantidos.
 #   Verifique:  py -3.12 --version
 #
-# 1) venv
-py -3.12 -m venv .venv
-.\.venv\Scripts\Activate.ps1
+# 1) venv — FORA da pasta do projeto: o SDK ROCm quebra com espaço no caminho ("VISAO COMPUTACIONAL")
+$VENV = "$env:USERPROFILE\venvs\skinlesion"
+py -3.12 -m venv $VENV
+& "$VENV\Scripts\Activate.ps1"
 python -m pip install --upgrade pip
 
 # 2) PyTorch para AMD RX 9060 XT (gfx1200) no Windows — ROCm 7.2.1, PyTorch 2.9.1, Python 3.12

@@ -1,0 +1,29 @@
+# Pré-processamento (M2): redimensiona uma vez e salva em data/processed/.
+# Motivo: Task 1 tem imagens de até 6708 px; ler o original a cada época custa mais que o treino.
+version: v1
+seed: 42
+
+classification:
+  # Task 3 (600x450, 4:3). Mantém a proporção: lado menor = 256 → 341x256.
+  # O recorte para 224x224 acontece nas transforms (aleatório no treino, central na validação).
+  short_side: 256
+  interpolation: area        # cv2.INTER_AREA — melhor para reduzir
+  jpeg_quality: 95
+  sources:
+    train: task3_images       # chaves de configs/data.yaml
+    test_official: task3_test_images
+
+segmentation:
+  # Task 1: imagem e máscara → 256x256 (distorce levemente a proporção; padrão na literatura ISIC).
+  # Máscara com INTER_NEAREST para continuar binária.
+  size: 256
+  interpolation: area
+  mask_interpolation: nearest
+  png_compression: 3
+  sources:
+    images: task1_images
+    masks: task1_masks
+
+output:
+  root: data/processed
+  manifest: data/processed/manifest_v1.csv   # id, task, split, caminho_processado, w_orig, h_orig

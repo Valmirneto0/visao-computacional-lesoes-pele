@@ -4,7 +4,10 @@ task1_images: data/raw/ISIC2018_Task1-2_Training_Input
 task1_masks: data/raw/ISIC2018_Task1_Training_GroundTruth
 task3_images: data/raw/ISIC2018_Task3_Training_Input
 task3_labels: data/raw/ISIC2018_Task3_Training_GroundTruth/ISIC2018_Task3_Training_GroundTruth.csv
-ham_metadata: data/raw/HAM10000_metadata.csv
+task3_groupings: data/raw/ISIC2018_Task3_Training_LesionGroupings.csv   # lesion_id + diagnosis_confirm_type
+task3_test_images: data/raw/ISIC2018_Task3_Test_Input
+task3_test_labels: data/raw/ISIC2018_Task3_Test_GroundTruth/ISIC2018_Task3_Test_GroundTruth.csv
+ham_metadata: data/raw/HAM10000_metadata.csv   # opcional: idade, sexo, localização
 classes: [MEL, NV, BCC, AKIEC, BKL, DF, VASC]
 priority_class: MEL
 seed: 42
@@ -13,3 +16,4 @@ split:
   train: 0.70
   val: 0.15
   test: 0.15
+  external_test: ISIC2018_Task3_Test   # teste oficial, nunca usado em treino/seleção

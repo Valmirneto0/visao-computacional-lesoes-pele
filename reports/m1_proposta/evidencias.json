@@ -1,0 +1,71 @@
+{
+  "n_task3_test": 1512,
+  "n_task1": 2594,
+  "n_task1_masks": 2594,
+  "n_task3": 10015,
+  "task1_task3_overlap": 0,
+  "has_demographics": true,
+  "class_counts": {
+    "MEL": 1113,
+    "NV": 6705,
+    "BCC": 514,
+    "AKIEC": 327,
+    "BKL": 1099,
+    "DF": 115,
+    "VASC": 142
+  },
+  "imbalance_ratio": 58.30434782608695,
+  "test_class_counts": {
+    "MEL": 171,
+    "NV": 909,
+    "BCC": 93,
+    "AKIEC": 43,
+    "BKL": 217,
+    "DF": 44,
+    "VASC": 35
+  },
+  "n_lesions": 7470,
+  "lesions_multi_image": 1956,
+  "dx_type": {
+    "histopathology": 5340,
+    "serial imaging showing no change": 3704,
+    "single image expert consensus": 902,
+    "confocal microscopy with consensus dermoscopy": 69
+  },
+  "histo_share_total": 0.5332001997004493,
+  "histo_share_by_class": {
+    "MEL": 100.0,
+    "NV": 37.3,
+    "BCC": 100.0,
+    "AKIEC": 100.0,
+    "BKL": 69.7,
+    "DF": 47.8,
+    "VASC": 47.2
+  },
+  "task3_resolutions": {
+    "600x450": 10015
+  },
+  "task1_res_range": [
+    576,
+    6708,
+    542,
+    4479
+  ],
+  "mask_area_median": 0.12653350830078125,
+  "mask_touch_border": 0.125,
+  "vignette_rate": 0.049,
+  "vignette_by_class": {
+    "MEL": 0.149,
+    "NV": 0.031,
+    "BCC": 0.0,
+    "AKIEC": 0.036,
+    "BKL": 0.086,
+    "DF": 0.0,
+    "VASC": 0.0
+  },
+  "split_counts": {
+    "train": 7017,
+    "test": 1511,
+    "val": 1487
+  }
+}

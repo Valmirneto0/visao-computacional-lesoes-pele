@@ -19,3 +19,6 @@ desktop.ini
 *.pt
 *.pth
 *.onnx
+
+# material pessoal de estudo (fica só local)
+reports/m1_proposta/Roteiro_Apresentacao_M1.pdf

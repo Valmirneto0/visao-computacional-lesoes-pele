@@ -50,9 +50,16 @@ def build_transforms(task, split, cfg=None):
 
 
 # ---------------------------------------------------------------- datasets
+def mask_path(img_rel):
+    """data/processed/seg/images/X.jpg → data/processed/seg/masks/X.png (independente do separador)."""
+    p = Path(str(img_rel).replace("\\", "/"))
+    return p.parent.parent / "masks" / (p.stem + ".png")
+
+
 def load_manifest(task, split, data_cfg=None, pre_cfg=None):
     pre_cfg = pre_cfg or load_yaml("configs/preprocess.yaml")
     m = pd.read_csv(ROOT / pre_cfg["output"]["manifest"])
+    m["path"] = m.path.str.replace("\\", "/", regex=False)
     m = m[(m.task == task) & (m.split == split) & (m.status.isin(["ok", "skip"]))]
     if len(m) == 0:
         raise RuntimeError(f"manifest vazio para task={task} split={split} — rode scripts/preprocess.py")
@@ -94,7 +101,8 @@ class SegmentationDataset(Dataset):
     def __getitem__(self, i):
         r = self.m.iloc[i]
         img = cv2.cvtColor(cv2.imread(str(ROOT / r.path)), cv2.COLOR_BGR2RGB)
-        msk = cv2.imread(str(ROOT / r.path.replace("/images/", "/masks/").replace(".jpg", ".png")), cv2.IMREAD_GRAYSCALE)
+        msk = cv2.imread(str(ROOT / mask_path(r.path)), cv2.IMREAD_GRAYSCALE)
+        assert msk is not None, f"máscara não encontrada para {r.id}"
         out = self.t(image=img, mask=msk)               # mesma transformação geométrica nos dois
         mask = (out["mask"] > 127).float().unsqueeze(0)  # [1,H,W] em {0,1}
         return out["image"], mask, r.id

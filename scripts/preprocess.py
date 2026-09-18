@@ -101,7 +101,7 @@ def main():
             jobs = [(f, dst_dir / f.name, c["short_side"], INTERP[c["interpolation"]], c["jpeg_quality"]) for f in files]
             for iid, w, h, st in run(jobs, process_cls, a.workers, f"cls/{name}"):
                 sp = split_map.get(iid, "test_official" if name == "test_official" else "NA")
-                manifest.append(dict(id=iid, task="cls", source=name, split=sp, path=str((dst_dir / f"{iid}.jpg").relative_to(ROOT)), w_orig=w, h_orig=h, status=st))
+                manifest.append(dict(id=iid, task="cls", source=name, split=sp, path=(dst_dir / f"{iid}.jpg").relative_to(ROOT).as_posix(), w_orig=w, h_orig=h, status=st))
 
     if a.task in ("seg", "all"):
         s = pre["segmentation"]
@@ -112,7 +112,7 @@ def main():
         jobs = [(f, msk_dir / f"{f.stem}_segmentation.png", dst_i / f.name, dst_m / f"{f.stem}.png",
                  s["size"], INTERP[s["interpolation"]], INTERP[s["mask_interpolation"]], s["png_compression"]) for f in files]
         for iid, w, h, st in run(jobs, process_seg, a.workers, "seg"):
-            manifest.append(dict(id=iid, task="seg", source="task1", split=split_map.get(iid, "NA"), path=str((dst_i / f"{iid}.jpg").relative_to(ROOT)), w_orig=w, h_orig=h, status=st))
+            manifest.append(dict(id=iid, task="seg", source="task1", split=split_map.get(iid, "NA"), path=(dst_i / f"{iid}.jpg").relative_to(ROOT).as_posix(), w_orig=w, h_orig=h, status=st))
 
     # manifest: junta com o anterior se existir (execuções parciais), sem duplicar
     mpath = ROOT / pre["output"]["manifest"]
@@ -125,6 +125,7 @@ def main():
         new = new[new.status != "skip"]
         old_keep = old[old.set_index(key).index.isin(skipped) | ~old.set_index(key).index.isin(new.set_index(key).index)]
         new = pd.concat([old_keep, new])
+    new["path"] = new.path.str.replace("\\", "/", regex=False)  # separador único, mesmo no Windows
     new = new.sort_values(["task", "source", "id"])
     mpath.parent.mkdir(parents=True, exist_ok=True); new.to_csv(mpath, index=False)
     print(f"\nmanifest: {mpath.relative_to(ROOT)}  ({len(new)} linhas)")

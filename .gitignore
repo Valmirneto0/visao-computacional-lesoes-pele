@@ -1,0 +1,21 @@
+# dados e pesos (baixados/gerados, nunca versionados)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+models/*
+!models/.gitkeep
+# python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+# sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+# saídas grandes
+*.zip
+*.pt
+*.pth
+*.onnx

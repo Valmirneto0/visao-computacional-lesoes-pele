@@ -1,0 +1,15 @@
+# Caminhos e constantes do dataset. Todo notebook/script lê daqui.
+raw_dir: data/raw
+task1_images: data/raw/ISIC2018_Task1-2_Training_Input
+task1_masks: data/raw/ISIC2018_Task1_Training_GroundTruth
+task3_images: data/raw/ISIC2018_Task3_Training_Input
+task3_labels: data/raw/ISIC2018_Task3_Training_GroundTruth/ISIC2018_Task3_Training_GroundTruth.csv
+ham_metadata: data/raw/HAM10000_metadata.csv
+classes: [MEL, NV, BCC, AKIEC, BKL, DF, VASC]
+priority_class: MEL
+seed: 42
+split:
+  strategy: grouped_stratified   # agrupa por lesion_id (evita vazamento) e estratifica por dx
+  train: 0.70
+  val: 0.15
+  test: 0.15

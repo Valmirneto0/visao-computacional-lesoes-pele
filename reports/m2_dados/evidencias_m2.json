@@ -1,0 +1,132 @@
+{
+  "counts": {
+    "cls/test_official": 1512,
+    "cls/train": 10015,
+    "seg/task1": 2594
+  },
+  "shapes": {
+    "cls": [
+      [
+        256,
+        341,
+        3
+      ]
+    ],
+    "seg": [
+      [
+        256,
+        256,
+        3
+      ]
+    ]
+  },
+  "dup_pairs_cls": 524,
+  "dup_cross_split": 238,
+  "dup_label_conflict": 78,
+  "dup_pairs_seg": 50,
+  "detectores_validados": {
+    "vinheta": {
+      "auc": 0.979,
+      "precisao": 0.786,
+      "recall": 0.846,
+      "f1": 0.815,
+      "limiar": 70.19791666666666,
+      "prevalencia_manual": 0.13,
+      "n": 200
+    },
+    "pelo": {
+      "auc": 0.597,
+      "precisao": 0.455,
+      "recall": 0.893,
+      "f1": 0.602,
+      "limiar": 0.0008476906158357771,
+      "prevalencia_manual": 0.42,
+      "n": 200
+    },
+    "regua": {
+      "auc": 0.548,
+      "precisao": 0.236,
+      "recall": 0.722,
+      "f1": 0.356,
+      "limiar": 15.2587890625,
+      "prevalencia_manual": 0.18,
+      "n": 200
+    }
+  },
+  "limiares": {
+    "vignette": 70.19791666666666,
+    "hair": 0.0008476906158357771,
+    "ruler": 15.2587890625
+  },
+  "artefato_por_classe": {
+    "tem_vinheta": {
+      "MEL": 0.189,
+      "NV": 0.059,
+      "BCC": 0.136,
+      "AKIEC": 0.07,
+      "BKL": 0.16,
+      "DF": 0.183,
+      "VASC": 0.07
+    },
+    "tem_pelo": {
+      "MEL": 0.922,
+      "NV": 0.673,
+      "BCC": 0.823,
+      "AKIEC": 0.917,
+      "BKL": 0.823,
+      "DF": 0.774,
+      "VASC": 0.585
+    },
+    "tem_regua": {
+      "MEL": 0.656,
+      "NV": 0.472,
+      "BCC": 0.459,
+      "AKIEC": 0.606,
+      "BKL": 0.54,
+      "DF": 0.53,
+      "VASC": 0.373
+    }
+  },
+  "artefato_por_split": {
+    "tem_vinheta": {
+      "test": 0.087,
+      "test_official": 0.093,
+      "train": 0.091,
+      "val": 0.091
+    },
+    "tem_pelo": {
+      "test": 0.762,
+      "test_official": 0.789,
+      "train": 0.73,
+      "val": 0.716
+    },
+    "tem_regua": {
+      "test": 0.522,
+      "test_official": 0.579,
+      "train": 0.506,
+      "val": 0.468
+    }
+  },
+  "chi2_tem_vinheta": {
+    "chi2": 302.9,
+    "p": 1.925898414472212e-62
+  },
+  "chi2_tem_pelo": {
+    "chi2": 466.6,
+    "p": 1.3314113552325235e-97
+  },
+  "chi2_tem_regua": {
+    "chi2": 164.1,
+    "p": 8.164378806757965e-33
+  },
+  "class_weights": {
+    "MEL": 0.273,
+    "NV": 0.045,
+    "BCC": 0.547,
+    "AKIEC": 0.864,
+    "BKL": 0.277,
+    "DF": 2.899,
+    "VASC": 2.095
+  },
+  "leak_check_processed": 0
+}

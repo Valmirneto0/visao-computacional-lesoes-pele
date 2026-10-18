@@ -1,0 +1,22 @@
+{
+  "version": "v1",
+  "metodo": "inverso da frequencia, media 1",
+  "contagem_treino": {
+    "MEL": 776,
+    "NV": 4671,
+    "BCC": 387,
+    "AKIEC": 245,
+    "BKL": 764,
+    "DF": 73,
+    "VASC": 101
+  },
+  "pesos": {
+    "MEL": 0.273,
+    "NV": 0.045,
+    "BCC": 0.547,
+    "AKIEC": 0.864,
+    "BKL": 0.277,
+    "DF": 2.899,
+    "VASC": 2.095
+  }
+}

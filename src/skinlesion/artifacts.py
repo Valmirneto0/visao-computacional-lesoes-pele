@@ -52,7 +52,8 @@ def ruler_score(img):
     lines = cv2.HoughLinesP(e, 1, np.pi / 180, threshold=25, minLineLength=8, maxLineGap=2)
     if lines is None:
         return 0.0
-    ang = np.degrees(np.arctan2(lines[:, 0, 3] - lines[:, 0, 1], lines[:, 0, 2] - lines[:, 0, 0])) % 180
+    lines = np.asarray(lines).reshape(-1, 4)  # OpenCV 4 devolve (N,1,4); OpenCV 5 devolve (N,4)
+    ang = np.degrees(np.arctan2(lines[:, 3] - lines[:, 1], lines[:, 2] - lines[:, 0])) % 180
     hist, _ = np.histogram(ang, bins=18, range=(0, 180))
     dominant = hist.max()  # muitos segmentos no mesmo ângulo = marcas de régua
     return float(dominant / (g.size / 1e6))

@@ -30,10 +30,10 @@ Os dados **não** são versionados. Baixe em https://challenge.isic-archive.com/
 ```
 configs/        constantes do dataset e do split (data.yaml)
 data/raw/       zips e pastas originais (ignorado pelo git)
-data/splits/    split_v1.csv — único split usado em todos os experimentos
-notebooks/      01_exploracao_inicial.ipynb (M1)
+data/splits/    split_v2.csv (split oficial a partir da M2), manifestos train/validation/test/test_official.csv, class_weights_v1.json
+notebooks/      01_exploracao_inicial.ipynb (M1), 02_auditoria.ipynb (M2)
 reports/        figuras, evidências e documentos das entregas
-scripts/        setup_env.ps1 (ambiente Windows), prepare_raw.sh
+scripts/        setup_env.ps1, prepare_raw.sh, preprocess.py, make_split_v2.py, m2_evidencias.py, smoke_test_data.py, audit_sample.py
 src/skinlesion/ código do pipeline (M2+)
 models/         pesos (ignorado pelo git)
 ```
@@ -54,4 +54,21 @@ Windows + AMD RX 9060 XT: `scripts/setup_env.ps1` (venv Python 3.12 em `%USERPRO
 
 ## Rastreabilidade
 
-Cada resultado aponta para: `configs/*.yaml` usado, hash do commit, `data/splits/split_v1.csv` e o arquivo de pesos. Seed global: 42.
+Cada resultado aponta para: `configs/*.yaml` usado, hash do commit, `data/splits/split_v2.csv` e o arquivo de pesos. Seed global: 42.
+
+## M2 — Dados (como reproduzir)
+
+Resumo e decisões: [`reports/m2_dados/M2_Dados.md`](reports/m2_dados/M2_Dados.md). Na raiz do projeto, com o venv ativo e os dados em `data/raw/`:
+
+```powershell
+python scripts/preprocess.py               # redimensiona uma vez → data/processed/ + manifest_v1.csv
+python scripts/m2_evidencias.py hash       # MD5 dos brutos + pHash (cache em reports/m2_dados/hashes_v1.csv)
+python scripts/make_split_v2.py            # split_v2: Task 3 = split_v1; Task 1 agrupada por quase-duplicata
+python scripts/preprocess.py               # regrava o manifest com o split_v2 (pula imagens já geradas)
+python scripts/m2_evidencias.py scores     # scores de artefato
+python scripts/m2_evidencias.py analyze    # auditoria + manifestos train/validation/test/test_official.csv
+python scripts/m2_evidencias.py figures    # figuras 08b, 09b, 10
+python scripts/smoke_test_data.py          # lotes válidos na GPU
+```
+
+O split oficial é `data/splits/split_v2.csv` (definido em `configs/data.yaml → split_file`). O teste interno e o teste oficial (holdout) ficam bloqueados até a avaliação final.

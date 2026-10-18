@@ -87,7 +87,7 @@ def main():
 
     data, pre = load_cfg()
     out_root = ROOT / pre["output"]["root"]
-    split = pd.read_csv(ROOT / "data/splits/split_v1.csv")
+    split = pd.read_csv(ROOT / data.get("split_file", "data/splits/split_v1.csv"))
     split_map = dict(zip(split.image, split.split))
     manifest = []
 
@@ -126,6 +126,8 @@ def main():
         old_keep = old[old.set_index(key).index.isin(skipped) | ~old.set_index(key).index.isin(new.set_index(key).index)]
         new = pd.concat([old_keep, new])
     new["path"] = new.path.str.replace("\\", "/", regex=False)  # separador único, mesmo no Windows
+    # o split vem sempre do arquivo de split atual (linhas 'skip' herdariam o split antigo)
+    new["split"] = [("test_official" if src == "test_official" else split_map.get(i, "NA")) for i, src in zip(new.id, new.source)]
     new = new.sort_values(["task", "source", "id"])
     mpath.parent.mkdir(parents=True, exist_ok=True); new.to_csv(mpath, index=False)
     print(f"\nmanifest: {mpath.relative_to(ROOT)}  ({len(new)} linhas)")

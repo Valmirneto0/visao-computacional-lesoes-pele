@@ -22,3 +22,7 @@ desktop.ini
 
 # material pessoal de estudo (fica só local)
 reports/m1_proposta/Roteiro_Apresentacao_M1.pdf
+
+# caches da auditoria M2
+reports/m2_dados/_m2_frame.pkl
+*.tmp

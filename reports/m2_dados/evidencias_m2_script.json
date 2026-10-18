@@ -1,0 +1,357 @@
+{
+  "gerado_em": "2026-10-18 23:07",
+  "seed": 42,
+  "script": "scripts/m2_evidencias.py",
+  "counts": {
+    "cls/test_official": 1512,
+    "cls/train": 10015,
+    "seg/task1": 2594
+  },
+  "preprocess_status": {
+    "ok": 14121
+  },
+  "hash_status": {
+    "ok": 14121
+  },
+  "raw_mode": {
+    "cls": {
+      "RGB": 11527
+    },
+    "seg": {
+      "RGB": 2594
+    }
+  },
+  "raw_format": {
+    "JPEG": 14121
+  },
+  "cls_raw_dims": {
+    "600x450": 11527
+  },
+  "seg_raw_w_range": [
+    576,
+    6748
+  ],
+  "seg_raw_h_range": [
+    540,
+    4499
+  ],
+  "seg_aspect_wh": {
+    "min": 0.75,
+    "50%": 1.5,
+    "max": 1.546
+  },
+  "seg_mask_shape_matches_image": 2594,
+  "proc_shapes": {
+    "cls": [
+      "341.0x256.0x3.0"
+    ],
+    "seg": [
+      "256.0x256.0x3.0"
+    ]
+  },
+  "mask_raw_binary": 2594,
+  "mask_proc_binary": 2594,
+  "mask_area": {
+    "mean": 0.214,
+    "std": 0.2083,
+    "min": 0.003,
+    "5%": 0.0154,
+    "50%": 0.1381,
+    "95%": 0.6517,
+    "max": 0.9877
+  },
+  "mask_empty": 0,
+  "mask_lt_1pct": 48,
+  "mask_gt_90pct": 20,
+  "mask_touch_border": 0.106,
+  "mask_multi_component": 506,
+  "cls_sem_rotulo": 0,
+  "cls_multi_rotulo": 0,
+  "gt_vs_metadata_dx_divergente": 0,
+  "md5_dup_groups": {
+    "cls": 2,
+    "seg": 0,
+    "cross_task": 2
+  },
+  "md5_dup_cross_split": 0,
+  "phash": {
+    "limiar_hamming": 4,
+    "pares_cls": 524,
+    "pares_seg": 50,
+    "pares_cls_mesma_lesao": 111,
+    "pares_cls_entre_splits": 238,
+    "pares_cls_entre_splits_por_par": {
+      "test|train": 32,
+      "test|val": 5,
+      "test|test_official": 6,
+      "test_official|train": 58,
+      "test_official|val": 16,
+      "train|val": 37
+    },
+    "pares_rotulo_diferente": 78,
+    "mad_mediana_mesma_lesao": 8.23,
+    "mad_mediana_lesoes_diferentes": 22.65,
+    "mad_min_entre_splits": 6.48,
+    "confirmadas_total": 26,
+    "confirmadas_entre_splits": 0,
+    "confirmadas_mesma_lesao": 21
+  },
+  "duplicate_groups": 24,
+  "duplicate_groups_cross_split": 0,
+  "detectores_validados": {
+    "vinheta": {
+      "auc": 0.979,
+      "precisao": 0.786,
+      "recall": 0.846,
+      "f1": 0.815,
+      "limiar": 70.1979,
+      "prevalencia_manual": 0.13,
+      "n": 200,
+      "usar": true
+    },
+    "pelo": {
+      "auc": 0.597,
+      "precisao": 0.455,
+      "recall": 0.893,
+      "f1": 0.602,
+      "limiar": 0.0008,
+      "prevalencia_manual": 0.42,
+      "n": 200,
+      "usar": false
+    },
+    "regua": {
+      "auc": 0.548,
+      "precisao": 0.236,
+      "recall": 0.722,
+      "f1": 0.356,
+      "limiar": 15.2588,
+      "prevalencia_manual": 0.18,
+      "n": 200,
+      "usar": false
+    }
+  },
+  "limiares": {
+    "vignette": 70.19791666666666,
+    "hair": 0.0008476906158357,
+    "ruler": 15.2587890625
+  },
+  "prevalencia_manual": {
+    "pelo": 0.42,
+    "regua": 0.18,
+    "vinheta": 0.13,
+    "bolha": 0.055,
+    "caneta": 0.015,
+    "outro": 0.015
+  },
+  "prevalencia_manual_por_grupo": {
+    "pelo": {
+      "AKIEC": 0.35,
+      "BCC": 0.65,
+      "BKL": 0.45,
+      "DF": 0.35,
+      "MEL": 0.275,
+      "NV": 0.6,
+      "SEG": 0.35,
+      "VASC": 0.3
+    },
+    "regua": {
+      "AKIEC": 0.2,
+      "BCC": 0.0,
+      "BKL": 0.05,
+      "DF": 0.2,
+      "MEL": 0.175,
+      "NV": 0.15,
+      "SEG": 0.5,
+      "VASC": 0.2
+    },
+    "vinheta": {
+      "AKIEC": 0.05,
+      "BCC": 0.0,
+      "BKL": 0.25,
+      "DF": 0.1,
+      "MEL": 0.2,
+      "NV": 0.05,
+      "SEG": 0.2,
+      "VASC": 0.2
+    }
+  },
+  "artefato_por_classe": {
+    "tem_vinheta": {
+      "MEL": 0.189,
+      "NV": 0.059,
+      "BCC": 0.136,
+      "AKIEC": 0.07,
+      "BKL": 0.16,
+      "DF": 0.183,
+      "VASC": 0.07
+    },
+    "tem_pelo": {
+      "MEL": 0.922,
+      "NV": 0.673,
+      "BCC": 0.823,
+      "AKIEC": 0.917,
+      "BKL": 0.823,
+      "DF": 0.774,
+      "VASC": 0.585
+    },
+    "tem_regua": {
+      "MEL": 0.656,
+      "NV": 0.472,
+      "BCC": 0.459,
+      "AKIEC": 0.606,
+      "BKL": 0.54,
+      "DF": 0.53,
+      "VASC": 0.373
+    }
+  },
+  "artefato_por_split": {
+    "tem_vinheta": {
+      "test": 0.087,
+      "test_official": 0.093,
+      "train": 0.091,
+      "val": 0.091
+    },
+    "tem_pelo": {
+      "test": 0.762,
+      "test_official": 0.789,
+      "train": 0.73,
+      "val": 0.716
+    },
+    "tem_regua": {
+      "test": 0.522,
+      "test_official": 0.579,
+      "train": 0.506,
+      "val": 0.468
+    }
+  },
+  "artefato_seg": {
+    "tem_vinheta": 0.101,
+    "tem_pelo": 0.904,
+    "tem_regua": 0.772
+  },
+  "chi2_tem_vinheta": {
+    "chi2": 302.9,
+    "gl": 6,
+    "p": 1.925898414472212e-62
+  },
+  "chi2_tem_pelo": {
+    "chi2": 466.6,
+    "gl": 6,
+    "p": 1.3314113552325235e-97
+  },
+  "chi2_tem_regua": {
+    "chi2": 164.1,
+    "gl": 6,
+    "p": 8.164378806757965e-33
+  },
+  "dist_cls": {
+    "test": {
+      "MEL": 171,
+      "NV": 1032,
+      "BCC": 65,
+      "AKIEC": 34,
+      "BKL": 163,
+      "DF": 23,
+      "VASC": 23
+    },
+    "test_official": {
+      "MEL": 171,
+      "NV": 909,
+      "BCC": 93,
+      "AKIEC": 43,
+      "BKL": 217,
+      "DF": 44,
+      "VASC": 35
+    },
+    "train": {
+      "MEL": 776,
+      "NV": 4671,
+      "BCC": 387,
+      "AKIEC": 245,
+      "BKL": 764,
+      "DF": 73,
+      "VASC": 101
+    },
+    "val": {
+      "MEL": 166,
+      "NV": 1002,
+      "BCC": 62,
+      "AKIEC": 48,
+      "BKL": 172,
+      "DF": 19,
+      "VASC": 18
+    }
+  },
+  "dist_seg": {
+    "train": 1816,
+    "test": 389,
+    "val": 389
+  },
+  "meta_por_split": {
+    "test": {
+      "n": 1511,
+      "idade_media": 51.1,
+      "idade_faltante": 10,
+      "sexo": {
+        "male": 0.545,
+        "female": 0.448,
+        "unknown": 0.007
+      },
+      "histo": 0.529,
+      "mel": 0.113
+    },
+    "train": {
+      "n": 7017,
+      "idade_media": 52.0,
+      "idade_faltante": 38,
+      "sexo": {
+        "male": 0.541,
+        "female": 0.454,
+        "unknown": 0.005
+      },
+      "histo": 0.539,
+      "mel": 0.111
+    },
+    "val": {
+      "n": 1487,
+      "idade_media": 51.9,
+      "idade_faltante": 9,
+      "sexo": {
+        "male": 0.529,
+        "female": 0.465,
+        "unknown": 0.006
+      },
+      "histo": 0.512,
+      "mel": 0.112
+    }
+  },
+  "localizacao_top": {
+    "back": 2192,
+    "lower extremity": 2077,
+    "trunk": 1404,
+    "upper extremity": 1118,
+    "abdomen": 1022,
+    "face": 745
+  },
+  "class_weights": {
+    "MEL": 0.273,
+    "NV": 0.045,
+    "BCC": 0.547,
+    "AKIEC": 0.864,
+    "BKL": 0.277,
+    "DF": 2.899,
+    "VASC": 2.095
+  },
+  "lesoes_em_mais_de_um_split": 0,
+  "ids_cls_seg_em_comum": 0,
+  "split_file": "data/splits/split_v2.csv",
+  "split_reconstruivel": true,
+  "seg_grupos_em_mais_de_um_split": 0,
+  "manifest_rows": {
+    "train": 8833,
+    "test": 1900,
+    "validation": 1876,
+    "holdout": 1512
+  },
+  "integrity_erro": 0
+}

@@ -1,7 +1,8 @@
 """Datasets e transformações (M2).
 
 Contrato:
-- Tudo lê de data/processed/ (gerado por scripts/preprocess.py) e do split em data/splits/split_v1.csv.
+- Tudo lê de data/processed/ (gerado por scripts/preprocess.py); o split vem de configs/data.yaml → split_file
+  (data/splits/split_v2.csv) e sobrescreve a coluna split do manifest.
 - Transformações vêm de configs/transforms.yaml; nenhuma augmentation é definida em código.
 - ClassificationDataset → (imagem[3,224,224] float, rótulo int, id)
 - SegmentationDataset   → (imagem[3,256,256] float, máscara[1,256,256] float 0/1, id)
@@ -60,6 +61,10 @@ def load_manifest(task, split, data_cfg=None, pre_cfg=None):
     pre_cfg = pre_cfg or load_yaml("configs/preprocess.yaml")
     m = pd.read_csv(ROOT / pre_cfg["output"]["manifest"])
     m["path"] = m.path.str.replace("\\", "/", regex=False)
+    data_cfg = data_cfg or load_yaml("configs/data.yaml")
+    if "split_file" in data_cfg:  # fonte da verdade do split = arquivo de split versionado
+        sp = pd.read_csv(ROOT / data_cfg["split_file"]); smap = dict(zip(sp.image, sp.split))
+        m["split"] = [("test_official" if s == "test_official" else smap.get(i, "NA")) for i, s in zip(m.id, m.source)]
     m = m[(m.task == task) & (m.split == split) & (m.status.isin(["ok", "skip"]))]
     if len(m) == 0:
         raise RuntimeError(f"manifest vazio para task={task} split={split} — rode scripts/preprocess.py")

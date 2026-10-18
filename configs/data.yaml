@@ -11,6 +11,8 @@ ham_metadata: data/raw/HAM10000_metadata.csv   # opcional: idade, sexo, localiza
 classes: [MEL, NV, BCC, AKIEC, BKL, DF, VASC]
 priority_class: MEL
 seed: 42
+# split_v2 (M2): Task 3 identica ao v1; Task 1 refeita por grupo de quase-duplicata (pHash <= 4) - ver scripts/make_split_v2.py
+split_file: data/splits/split_v2.csv
 split:
   strategy: grouped_stratified   # agrupa por lesion_id (evita vazamento) e estratifica por dx
   train: 0.70

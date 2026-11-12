@@ -1,0 +1,134 @@
+python : C:\Users\Neto\venvs\skinlesion\Lib\site-packages\torch\backends\cudnn\__init__.py:153: UserWarning: cuDNN Benchmark limit is not supported in MIOpen and will have no effect. (Triggered internally at 
+C:\b\pytorch\torch\csrc\cuda\Module.cpp:1904.)
+No C:\Users\Neto\Desktop\VISAO COMPUTACIONAL\scripts\run_all.ps1:22 caractere:1
++ python scripts/final_report.py 2>&1 | Tee-Object reports\final\final_ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\Neto\v...dule.cpp:1904.):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  torch._C._cuda_set_cudnn_benchmark_limit(_benchmark_limit)
+[ROCm] BatchNorm com kernel nativo; convoluções com MIOpen
+== 1. Comparação na validação
+ experimento  melhor_epoca  epocas  val_acuracia  val_acuracia_balanceada  val_macro_precisao  val_macro_revocacao  val_macro_f1  val_revocacao_MEL  val_f1_MEL  minutos  delta_macro_f1_vs_baseline  delta_rev_MEL_vs_baseline
+    baseline            19      25        0.7969                   0.6935              0.7358               0.6935        0.7078             0.5663      0.4870   8.1150                      0.0000                     0.0000
+  exp1_focal            22      25        0.7801                   0.7162              0.6921               0.7162        0.6996             0.5843      0.4826   7.8798                     -0.0082                     0.0181
+exp2_scratch            24      25        0.6543                   0.6226              0.4570               0.6226        0.5039             0.6205      0.4402   7.9326                     -0.2039                     0.0542
+== 2. Modelo final: baseline
+== 3. Avaliação final (teste interno e teste oficial ISIC 2018)
+== 4. Acertos, erros e causas
+{
+  "modelo_final": "baseline",
+  "checkpoint": "models\\baseline.pt",
+  "criterio": "maior macro-F1 na validação (teste não usado na escolha)",
+  "val_macro_f1": 0.7078208418485421,
+  "teste": {
+    "n": 1511,
+    "accuracy": 0.7948378557246857,
+    "balanced_accuracy": 0.7332879565683807,
+    "macro_precision": 0.6809049531058303,
+    "macro_recall": 0.7332879565683807,
+    "macro_f1": 0.6990949200907154,
+    "weighted_f1": 0.8076031531512586
+  },
+  "teste_oficial": {
+    "n": 1512,
+    "accuracy": 0.78505291005291,
+    "balanced_accuracy": 0.7068581916752233,
+    "macro_precision": 0.6983756463972383,
+    "macro_recall": 0.7068581916752233,
+    "macro_f1": 0.698603407272965,
+    "weighted_f1": 0.7935634770336317
+  },
+  "teste_revocacao_MEL": 0.7134502923976608,
+  "teste_oficial_revocacao_MEL": 0.6666666666666666
+}
+{
+  "n_teste": 1511,
+  "n_erros": 310,
+  "taxa_erro": 0.20516214427531437,
+  "top_confusoes": [
+    {
+      "real": "NV",
+      "previsto": "MEL",
+      "n": 120,
+      "frac_dos_erros": 0.3870967741935484
+    },
+    {
+      "real": "NV",
+      "previsto": "BKL",
+      "n": 36,
+      "frac_dos_erros": 0.11612903225806452
+    },
+    {
+      "real": "MEL",
+      "previsto": "NV",
+      "n": 29,
+      "frac_dos_erros": 0.0935483870967742
+    },
+    {
+      "real": "MEL",
+      "previsto": "BKL",
+      "n": 17,
+      "frac_dos_erros": 0.054838709677419356
+    },
+    {
+      "real": "BKL",
+      "previsto": "MEL",
+      "n": 16,
+      "frac_dos_erros": 0.05161290322580645
+    },
+    {
+      "real": "BKL",
+      "previsto": "NV",
+      "n": 15,
+      "frac_dos_erros": 0.04838709677419355
+    },
+    {
+      "real": "NV",
+      "previsto": "AKIEC",
+      "n": 8,
+      "frac_dos_erros": 0.025806451612903226
+    },
+    {
+      "real": "NV",
+      "previsto": "BCC",
+      "n": 7,
+      "frac_dos_erros": 0.02258064516129032
+    }
+  ],
+  "confianca_media_acertos": 0.8974645137786865,
+  "confianca_media_erros": 0.677600085735321,
+  "erros_com_conf_maior_0.9": 51,
+  "por_vinheta": {
+    "com_vinheta": {
+      "n": 132,
+      "acuracia": 0.7121212121212122,
+      "macro_f1": 0.6969960541389114,
+      "revocacao_MEL": 0.78125,
+      "suporte_MEL": 32,
+      "precisao_MEL": 0.5952380952380952
+    },
+    "sem_vinheta": {
+      "n": 1379,
+      "acuracia": 0.8027556200145033,
+      "macro_f1": 0.6921954886340543,
+      "revocacao_MEL": 0.697841726618705,
+      "suporte_MEL": 139,
+      "precisao_MEL": 0.42920353982300885
+    }
+  },
+  "por_confirmacao": {
+    "histopatologia": {
+      "n": 799,
+      "acuracia": 0.6670838548185232,
+      "macro_f1": 0.6548275288625901
+    },
+    "outra_confirmacao": {
+      "n": 712,
+      "acuracia": 0.9382022471910112,
+      "macro_f1": 0.481373359412865
+    }
+  },
+  "falso_MEL_taxa_com_vinheta": 0.17,
+  "falso_MEL_taxa_sem_vinheta": 0.10403225806451613
+}

@@ -1,0 +1,21 @@
+# BASELINE NEURAL — referência para todos os experimentos.
+# Uma única coisa muda em cada experimento (ver exp1_focal.yaml e exp2_scratch.yaml); o resto é idêntico.
+name: baseline
+descricao: ResNet-18 pré-treinada no ImageNet, fine-tuning de todas as camadas, CE ponderada por classe
+model:
+  arch: resnet18
+  pretrained: true          # transferência de aprendizado (pesos ImageNet)
+  dropout: 0.2              # antes da camada final
+loss:
+  name: ce                  # entropia cruzada
+  class_weights: data/splits/class_weights_v1.json   # inverso da frequência (M2), contra o desbalanceamento de 58x
+optimizer:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 1.0e-4      # regularização L2 desacoplada
+scheduler: cosine           # decai a lr até ~0 ao longo das épocas
+batch_size: 32
+epochs: 25
+num_workers: 4
+seed: 42
+selection_metric: macro_f1  # época salva = maior macro-F1 na VALIDAÇÃO (teste nunca é olhado no treino)

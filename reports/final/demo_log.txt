@@ -1,0 +1,18 @@
+python : C:\Users\Neto\venvs\skinlesion\Lib\site-packages\torch\backends\cudnn\__init__.py:153: UserWarning: cuDNN Benchmark limit is not supported in MIOpen and will have no effect. (Triggered internally at 
+C:\b\pytorch\torch\csrc\cuda\Module.cpp:1904.)
+No C:\Users\Neto\Desktop\VISAO COMPUTACIONAL\scripts\run_all.ps1:25 caractere:1
++ python scripts/demo.py 2>&1 | Tee-Object reports\final\demo_log.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\Neto\v...dule.cpp:1904.):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  torch._C._cuda_set_cudnn_benchmark_limit(_benchmark_limit)
+[ROCm] BatchNorm com kernel nativo; convoluções com MIOpen
+ISIC_0035992: MEL (melanoma) conf 0.49 | top-3: MEL 0.49 | BKL 0.37 | AKIEC 0.13 | real: MEL
+ISIC_0035441: NV (nevo melanocítico) conf 0.99 | top-3: NV 0.99 | DF 0.01 | BKL 0.00 | real: NV
+ISIC_0035692: BCC (carcinoma basocelular) conf 0.98 | top-3: BCC 0.98 | BKL 0.01 | NV 0.01 | real: BCC
+ISIC_0035691: DF (dermatofibroma) conf 0.43 | top-3: DF 0.43 | MEL 0.32 | BKL 0.12 | real: AKIEC
+ISIC_0035464: BKL (lesão queratósica benigna) conf 0.50 | top-3: BKL 0.50 | NV 0.47 | MEL 0.03 | real: BKL
+ISIC_0035863: DF (dermatofibroma) conf 0.92 | top-3: DF 0.92 | NV 0.05 | VASC 0.02 | real: DF
+ISIC_0035910: NV (nevo melanocítico) conf 0.93 | top-3: NV 0.93 | BCC 0.06 | MEL 0.01 | real: VASC
+→ reports/figures/29_demo.png | reports/final/demo_resultados.csv

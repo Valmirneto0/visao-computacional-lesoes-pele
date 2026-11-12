@@ -1,0 +1,26 @@
+{
+  "modelo_final": "baseline",
+  "checkpoint": "models\\baseline.pt",
+  "criterio": "maior macro-F1 na validação (teste não usado na escolha)",
+  "val_macro_f1": 0.7078208418485421,
+  "teste": {
+    "n": 1511,
+    "accuracy": 0.7948378557246857,
+    "balanced_accuracy": 0.7332879565683807,
+    "macro_precision": 0.6809049531058303,
+    "macro_recall": 0.7332879565683807,
+    "macro_f1": 0.6990949200907154,
+    "weighted_f1": 0.8076031531512586
+  },
+  "teste_oficial": {
+    "n": 1512,
+    "accuracy": 0.78505291005291,
+    "balanced_accuracy": 0.7068581916752233,
+    "macro_precision": 0.6983756463972383,
+    "macro_recall": 0.7068581916752233,
+    "macro_f1": 0.698603407272965,
+    "weighted_f1": 0.7935634770336317
+  },
+  "teste_revocacao_MEL": 0.7134502923976608,
+  "teste_oficial_revocacao_MEL": 0.6666666666666666
+}

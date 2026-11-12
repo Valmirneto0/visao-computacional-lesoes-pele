@@ -26,3 +26,6 @@ reports/m1_proposta/Roteiro_Apresentacao_M1.pdf
 # caches da auditoria M2
 reports/m2_dados/_m2_frame.pkl
 *.tmp
+
+# modelo final versionado (43 MB) para a demo rodar sem retreinar; os outros pesos ficam fora
+!models/baseline.pt

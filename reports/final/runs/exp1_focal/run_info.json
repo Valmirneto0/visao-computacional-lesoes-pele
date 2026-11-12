@@ -1,0 +1,17 @@
+{
+  "name": "exp1_focal",
+  "config_file": "configs/experiments/exp1_focal.yaml",
+  "git": "596e61e",
+  "device": "cuda",
+  "torch": "2.9.1+rocm7.2.1",
+  "best_epoch": 22,
+  "best_val_macro_f1": 0.6996174480760212,
+  "epochs": 25,
+  "params_total": 11180103,
+  "params_trainable": 11180103,
+  "minutes": 7.879840664068857,
+  "n_train": 7017,
+  "n_val": 1487,
+  "limit": null,
+  "checkpoint": "models\\exp1_focal.pt"
+}

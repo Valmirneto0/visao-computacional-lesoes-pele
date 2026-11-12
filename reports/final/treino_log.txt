@@ -1,0 +1,111 @@
+python : C:\Users\Neto\venvs\skinlesion\Lib\site-packages\torch\backends\cudnn\__init__.py:153: UserWarning: cuDNN Benchmark limit is not supported in MIOpen and will have no effect. (Triggered internally at 
+C:\b\pytorch\torch\csrc\cuda\Module.cpp:1904.)
+No C:\Users\Neto\Desktop\VISAO COMPUTACIONAL\scripts\run_all.ps1:17 caractere:5
++     python scripts/train.py --config "configs/experiments/$e.yaml" 2> ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\Neto\v...dule.cpp:1904.):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  torch._C._cuda_set_cudnn_benchmark_limit(_benchmark_limit)
+[ROCm] BatchNorm com kernel nativo; convoluções com MIOpen
+[baseline] device=cuda | treino=7017 val=1487 | params=11,180,103 | entrada [B,3,224,224] → saída [B,7]
+  ep 01/25 | loss tr 1.3222 val 1.1590 | acc tr 0.535 val 0.594 | macroF1 val 0.439 | recall MEL 0.428 | 77s *
+  ep 02/25 | loss tr 1.0643 val 1.0768 | acc tr 0.613 val 0.631 | macroF1 val 0.446 | recall MEL 0.482 | 17s *
+  ep 03/25 | loss tr 0.9591 val 0.9315 | acc tr 0.639 val 0.672 | macroF1 val 0.525 | recall MEL 0.584 | 17s *
+  ep 04/25 | loss tr 0.8869 val 0.9537 | acc tr 0.664 val 0.581 | macroF1 val 0.438 | recall MEL 0.295 | 17s
+  ep 05/25 | loss tr 0.8616 val 1.5131 | acc tr 0.672 val 0.553 | macroF1 val 0.406 | recall MEL 0.410 | 17s
+  ep 06/25 | loss tr 0.7999 val 0.9265 | acc tr 0.682 val 0.653 | macroF1 val 0.542 | recall MEL 0.542 | 17s *
+  ep 07/25 | loss tr 0.7320 val 1.0086 | acc tr 0.705 val 0.690 | macroF1 val 0.550 | recall MEL 0.747 | 17s *
+  ep 08/25 | loss tr 0.7434 val 0.9176 | acc tr 0.704 val 0.726 | macroF1 val 0.586 | recall MEL 0.373 | 17s *
+  ep 09/25 | loss tr 0.6542 val 0.8390 | acc tr 0.729 val 0.715 | macroF1 val 0.587 | recall MEL 0.639 | 17s *
+  ep 10/25 | loss tr 0.5862 val 0.8504 | acc tr 0.736 val 0.707 | macroF1 val 0.591 | recall MEL 0.620 | 17s *
+  ep 11/25 | loss tr 0.5533 val 0.9348 | acc tr 0.746 val 0.737 | macroF1 val 0.624 | recall MEL 0.404 | 17s *
+  ep 12/25 | loss tr 0.5613 val 1.0216 | acc tr 0.744 val 0.762 | macroF1 val 0.643 | recall MEL 0.596 | 17s *
+  ep 13/25 | loss tr 0.4732 val 0.9317 | acc tr 0.774 val 0.730 | macroF1 val 0.608 | recall MEL 0.699 | 17s
+  ep 14/25 | loss tr 0.4755 val 1.1063 | acc tr 0.772 val 0.775 | macroF1 val 0.638 | recall MEL 0.536 | 17s
+  ep 15/25 | loss tr 0.4787 val 0.8925 | acc tr 0.782 val 0.768 | macroF1 val 0.667 | recall MEL 0.602 | 17s *
+  ep 16/25 | loss tr 0.3994 val 0.9602 | acc tr 0.790 val 0.782 | macroF1 val 0.646 | recall MEL 0.518 | 17s
+  ep 17/25 | loss tr 0.3742 val 0.9215 | acc tr 0.815 val 0.758 | macroF1 val 0.665 | recall MEL 0.596 | 17s
+  ep 18/25 | loss tr 0.3488 val 1.0565 | acc tr 0.811 val 0.769 | macroF1 val 0.670 | recall MEL 0.741 | 17s *
+  ep 19/25 | loss tr 0.3416 val 0.9593 | acc tr 0.823 val 0.797 | macroF1 val 0.708 | recall MEL 0.566 | 17s *
+  ep 20/25 | loss tr 0.3048 val 0.9775 | acc tr 0.832 val 0.791 | macroF1 val 0.694 | recall MEL 0.536 | 17s
+  ep 21/25 | loss tr 0.2849 val 0.9898 | acc tr 0.841 val 0.794 | macroF1 val 0.696 | recall MEL 0.512 | 17s
+  ep 22/25 | loss tr 0.2690 val 1.0399 | acc tr 0.851 val 0.792 | macroF1 val 0.694 | recall MEL 0.554 | 17s
+  ep 23/25 | loss tr 0.2645 val 0.9263 | acc tr 0.857 val 0.804 | macroF1 val 0.703 | recall MEL 0.536 | 17s
+  ep 24/25 | loss tr 0.2455 val 1.0088 | acc tr 0.854 val 0.779 | macroF1 val 0.685 | recall MEL 0.566 | 17s
+  ep 25/25 | loss tr 0.2592 val 0.9603 | acc tr 0.859 val 0.789 | macroF1 val 0.694 | recall MEL 0.590 | 17s
+[baseline] melhor época 19: macro-F1 val = 0.7078 | 8.1 min → baseline.pt
+python : C:\Users\Neto\venvs\skinlesion\Lib\site-packages\torch\backends\cudnn\__init__.py:153: UserWarning: cuDNN Benchmark limit is not supported in MIOpen and will have no effect. (Triggered internally at 
+C:\b\pytorch\torch\csrc\cuda\Module.cpp:1904.)
+No C:\Users\Neto\Desktop\VISAO COMPUTACIONAL\scripts\run_all.ps1:17 caractere:5
++     python scripts/train.py --config "configs/experiments/$e.yaml" 2> ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\Neto\v...dule.cpp:1904.):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  torch._C._cuda_set_cudnn_benchmark_limit(_benchmark_limit)
+[ROCm] BatchNorm com kernel nativo; convoluções com MIOpen
+[exp1_focal] device=cuda | treino=7017 val=1487 | params=11,180,103 | entrada [B,3,224,224] → saída [B,7]
+  ep 01/25 | loss tr 0.8963 val 0.7733 | acc tr 0.528 val 0.545 | macroF1 val 0.389 | recall MEL 0.566 | 63s *
+  ep 02/25 | loss tr 0.6427 val 0.6758 | acc tr 0.594 val 0.697 | macroF1 val 0.486 | recall MEL 0.566 | 17s *
+  ep 03/25 | loss tr 0.5757 val 0.5232 | acc tr 0.638 val 0.708 | macroF1 val 0.515 | recall MEL 0.458 | 17s *
+  ep 04/25 | loss tr 0.4854 val 0.5719 | acc tr 0.658 val 0.665 | macroF1 val 0.543 | recall MEL 0.452 | 17s *
+  ep 05/25 | loss tr 0.5052 val 0.6920 | acc tr 0.653 val 0.621 | macroF1 val 0.459 | recall MEL 0.476 | 17s
+  ep 06/25 | loss tr 0.4923 val 0.6094 | acc tr 0.657 val 0.691 | macroF1 val 0.542 | recall MEL 0.596 | 17s
+  ep 07/25 | loss tr 0.4097 val 0.4585 | acc tr 0.685 val 0.676 | macroF1 val 0.554 | recall MEL 0.554 | 17s *
+  ep 08/25 | loss tr 0.3877 val 0.6125 | acc tr 0.689 val 0.759 | macroF1 val 0.636 | recall MEL 0.518 | 17s *
+  ep 09/25 | loss tr 0.3547 val 0.4564 | acc tr 0.717 val 0.697 | macroF1 val 0.548 | recall MEL 0.337 | 17s
+  ep 10/25 | loss tr 0.2907 val 0.5059 | acc tr 0.729 val 0.687 | macroF1 val 0.559 | recall MEL 0.747 | 17s
+  ep 11/25 | loss tr 0.2761 val 0.5123 | acc tr 0.735 val 0.683 | macroF1 val 0.579 | recall MEL 0.554 | 17s
+  ep 12/25 | loss tr 0.3145 val 0.4625 | acc tr 0.727 val 0.726 | macroF1 val 0.607 | recall MEL 0.572 | 17s
+  ep 13/25 | loss tr 0.2316 val 0.3631 | acc tr 0.755 val 0.699 | macroF1 val 0.601 | recall MEL 0.729 | 17s
+  ep 14/25 | loss tr 0.2467 val 0.6502 | acc tr 0.754 val 0.740 | macroF1 val 0.626 | recall MEL 0.536 | 17s
+  ep 15/25 | loss tr 0.2045 val 0.4562 | acc tr 0.776 val 0.745 | macroF1 val 0.634 | recall MEL 0.590 | 17s
+  ep 16/25 | loss tr 0.1976 val 0.4552 | acc tr 0.776 val 0.755 | macroF1 val 0.664 | recall MEL 0.620 | 17s *
+  ep 17/25 | loss tr 0.1831 val 0.4461 | acc tr 0.794 val 0.764 | macroF1 val 0.655 | recall MEL 0.560 | 17s
+  ep 18/25 | loss tr 0.1635 val 0.4248 | acc tr 0.800 val 0.766 | macroF1 val 0.671 | recall MEL 0.602 | 17s *
+  ep 19/25 | loss tr 0.1501 val 0.4960 | acc tr 0.809 val 0.779 | macroF1 val 0.686 | recall MEL 0.590 | 18s *
+  ep 20/25 | loss tr 0.1284 val 0.5466 | acc tr 0.818 val 0.758 | macroF1 val 0.676 | recall MEL 0.596 | 17s
+  ep 21/25 | loss tr 0.1217 val 0.5773 | acc tr 0.823 val 0.784 | macroF1 val 0.685 | recall MEL 0.578 | 17s
+  ep 22/25 | loss tr 0.1061 val 0.5455 | acc tr 0.840 val 0.780 | macroF1 val 0.700 | recall MEL 0.584 | 17s *
+  ep 23/25 | loss tr 0.1160 val 0.5259 | acc tr 0.835 val 0.786 | macroF1 val 0.698 | recall MEL 0.566 | 17s
+  ep 24/25 | loss tr 0.1056 val 0.5741 | acc tr 0.832 val 0.777 | macroF1 val 0.689 | recall MEL 0.560 | 17s
+  ep 25/25 | loss tr 0.1120 val 0.5254 | acc tr 0.844 val 0.777 | macroF1 val 0.684 | recall MEL 0.566 | 17s
+[exp1_focal] melhor época 22: macro-F1 val = 0.6996 | 7.9 min → exp1_focal.pt
+python : C:\Users\Neto\venvs\skinlesion\Lib\site-packages\torch\backends\cudnn\__init__.py:153: UserWarning: cuDNN Benchmark limit is not supported in MIOpen and will have no effect. (Triggered internally at 
+C:\b\pytorch\torch\csrc\cuda\Module.cpp:1904.)
+No C:\Users\Neto\Desktop\VISAO COMPUTACIONAL\scripts\run_all.ps1:17 caractere:5
++     python scripts/train.py --config "configs/experiments/$e.yaml" 2> ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\Neto\v...dule.cpp:1904.):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  torch._C._cuda_set_cudnn_benchmark_limit(_benchmark_limit)
+[ROCm] BatchNorm com kernel nativo; convoluções com MIOpen
+[exp2_scratch] device=cuda | treino=7017 val=1487 | params=11,180,103 | entrada [B,3,224,224] → saída [B,7]
+  ep 01/25 | loss tr 1.7310 val 1.8042 | acc tr 0.400 val 0.476 | macroF1 val 0.250 | recall MEL 0.157 | 64s *
+  ep 02/25 | loss tr 1.6277 val 1.5345 | acc tr 0.426 val 0.445 | macroF1 val 0.271 | recall MEL 0.253 | 17s *
+  ep 03/25 | loss tr 1.5283 val 1.4458 | acc tr 0.460 val 0.473 | macroF1 val 0.285 | recall MEL 0.596 | 17s *
+  ep 04/25 | loss tr 1.4901 val 1.5011 | acc tr 0.482 val 0.538 | macroF1 val 0.307 | recall MEL 0.482 | 17s *
+  ep 05/25 | loss tr 1.4858 val 1.5956 | acc tr 0.485 val 0.500 | macroF1 val 0.288 | recall MEL 0.398 | 17s
+  ep 06/25 | loss tr 1.4525 val 1.5384 | acc tr 0.500 val 0.494 | macroF1 val 0.308 | recall MEL 0.548 | 17s *
+  ep 07/25 | loss tr 1.3687 val 1.4232 | acc tr 0.516 val 0.548 | macroF1 val 0.353 | recall MEL 0.536 | 17s *
+  ep 08/25 | loss tr 1.3228 val 1.3414 | acc tr 0.519 val 0.591 | macroF1 val 0.379 | recall MEL 0.536 | 17s *
+  ep 09/25 | loss tr 1.2906 val 1.3152 | acc tr 0.552 val 0.566 | macroF1 val 0.356 | recall MEL 0.572 | 17s
+  ep 10/25 | loss tr 1.2928 val 1.2600 | acc tr 0.548 val 0.617 | macroF1 val 0.372 | recall MEL 0.476 | 17s
+  ep 11/25 | loss tr 1.2519 val 1.2931 | acc tr 0.559 val 0.541 | macroF1 val 0.366 | recall MEL 0.681 | 17s
+  ep 12/25 | loss tr 1.2467 val 1.2762 | acc tr 0.556 val 0.657 | macroF1 val 0.422 | recall MEL 0.524 | 17s *
+  ep 13/25 | loss tr 1.1971 val 1.1541 | acc tr 0.564 val 0.601 | macroF1 val 0.428 | recall MEL 0.512 | 17s *
+  ep 14/25 | loss tr 1.1904 val 1.2768 | acc tr 0.583 val 0.674 | macroF1 val 0.475 | recall MEL 0.645 | 17s *
+  ep 15/25 | loss tr 1.1460 val 1.2132 | acc tr 0.595 val 0.642 | macroF1 val 0.458 | recall MEL 0.536 | 17s
+  ep 16/25 | loss tr 1.1328 val 1.1023 | acc tr 0.595 val 0.637 | macroF1 val 0.464 | recall MEL 0.633 | 17s
+  ep 17/25 | loss tr 1.1019 val 1.2004 | acc tr 0.612 val 0.629 | macroF1 val 0.459 | recall MEL 0.633 | 17s
+  ep 18/25 | loss tr 1.0641 val 1.1999 | acc tr 0.611 val 0.641 | macroF1 val 0.465 | recall MEL 0.639 | 17s
+  ep 19/25 | loss tr 1.0473 val 1.1602 | acc tr 0.619 val 0.666 | macroF1 val 0.503 | recall MEL 0.687 | 17s *
+  ep 20/25 | loss tr 1.0315 val 1.1405 | acc tr 0.625 val 0.648 | macroF1 val 0.474 | recall MEL 0.627 | 17s
+  ep 21/25 | loss tr 1.0063 val 1.1134 | acc tr 0.626 val 0.671 | macroF1 val 0.490 | recall MEL 0.663 | 17s
+  ep 22/25 | loss tr 0.9645 val 1.1166 | acc tr 0.637 val 0.670 | macroF1 val 0.500 | recall MEL 0.620 | 17s
+  ep 23/25 | loss tr 0.9625 val 1.1007 | acc tr 0.632 val 0.658 | macroF1 val 0.492 | recall MEL 0.663 | 17s
+  ep 24/25 | loss tr 0.9532 val 1.1164 | acc tr 0.638 val 0.654 | macroF1 val 0.504 | recall MEL 0.620 | 17s *
+  ep 25/25 | loss tr 0.9720 val 1.1105 | acc tr 0.632 val 0.636 | macroF1 val 0.479 | recall MEL 0.614 | 17s
+[exp2_scratch] melhor época 24: macro-F1 val = 0.5039 | 7.9 min → exp2_scratch.pt

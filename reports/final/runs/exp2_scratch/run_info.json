@@ -1,0 +1,17 @@
+{
+  "name": "exp2_scratch",
+  "config_file": "configs/experiments/exp2_scratch.yaml",
+  "git": "596e61e",
+  "device": "cuda",
+  "torch": "2.9.1+rocm7.2.1",
+  "best_epoch": 24,
+  "best_val_macro_f1": 0.5039087682868767,
+  "epochs": 25,
+  "params_total": 11180103,
+  "params_trainable": 11180103,
+  "minutes": 7.932632569471995,
+  "n_train": 7017,
+  "n_val": 1487,
+  "limit": null,
+  "checkpoint": "models\\exp2_scratch.pt"
+}

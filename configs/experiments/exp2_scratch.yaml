@@ -1,0 +1,21 @@
+# EXPERIMENTO 2 — muda SÓ a inicialização: pesos ImageNet → aleatórios (treino do zero).
+# Hipótese: com ~7 mil imagens de treino, a transferência de aprendizado supera o treino do zero com folga.
+name: exp2_scratch
+descricao: "Experimento 2 — igual ao baseline, mas pesos aleatórios (treino do zero, sem ImageNet)"
+model:
+  arch: resnet18
+  pretrained: false         # treino do zero
+  dropout: 0.2              # antes da camada final
+loss:
+  name: ce                  # entropia cruzada
+  class_weights: data/splits/class_weights_v1.json   # inverso da frequência (M2), contra o desbalanceamento de 58x
+optimizer:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 1.0e-4      # regularização L2 desacoplada
+scheduler: cosine           # decai a lr até ~0 ao longo das épocas
+batch_size: 32
+epochs: 25
+num_workers: 4
+seed: 42
+selection_metric: macro_f1  # época salva = maior macro-F1 na VALIDAÇÃO (teste nunca é olhado no treino)

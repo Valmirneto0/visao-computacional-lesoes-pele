@@ -1,0 +1,90 @@
+{
+  "n_teste": 1511,
+  "n_erros": 310,
+  "taxa_erro": 0.20516214427531437,
+  "top_confusoes": [
+    {
+      "real": "NV",
+      "previsto": "MEL",
+      "n": 120,
+      "frac_dos_erros": 0.3870967741935484
+    },
+    {
+      "real": "NV",
+      "previsto": "BKL",
+      "n": 36,
+      "frac_dos_erros": 0.11612903225806452
+    },
+    {
+      "real": "MEL",
+      "previsto": "NV",
+      "n": 29,
+      "frac_dos_erros": 0.0935483870967742
+    },
+    {
+      "real": "MEL",
+      "previsto": "BKL",
+      "n": 17,
+      "frac_dos_erros": 0.054838709677419356
+    },
+    {
+      "real": "BKL",
+      "previsto": "MEL",
+      "n": 16,
+      "frac_dos_erros": 0.05161290322580645
+    },
+    {
+      "real": "BKL",
+      "previsto": "NV",
+      "n": 15,
+      "frac_dos_erros": 0.04838709677419355
+    },
+    {
+      "real": "NV",
+      "previsto": "AKIEC",
+      "n": 8,
+      "frac_dos_erros": 0.025806451612903226
+    },
+    {
+      "real": "NV",
+      "previsto": "BCC",
+      "n": 7,
+      "frac_dos_erros": 0.02258064516129032
+    }
+  ],
+  "confianca_media_acertos": 0.8974645137786865,
+  "confianca_media_erros": 0.677600085735321,
+  "erros_com_conf_maior_0.9": 51,
+  "por_vinheta": {
+    "com_vinheta": {
+      "n": 132,
+      "acuracia": 0.7121212121212122,
+      "macro_f1": 0.6969960541389114,
+      "revocacao_MEL": 0.78125,
+      "suporte_MEL": 32,
+      "precisao_MEL": 0.5952380952380952
+    },
+    "sem_vinheta": {
+      "n": 1379,
+      "acuracia": 0.8027556200145033,
+      "macro_f1": 0.6921954886340543,
+      "revocacao_MEL": 0.697841726618705,
+      "suporte_MEL": 139,
+      "precisao_MEL": 0.42920353982300885
+    }
+  },
+  "por_confirmacao": {
+    "histopatologia": {
+      "n": 799,
+      "acuracia": 0.6670838548185232,
+      "macro_f1": 0.6548275288625901
+    },
+    "outra_confirmacao": {
+      "n": 712,
+      "acuracia": 0.9382022471910112,
+      "macro_f1": 0.481373359412865
+    }
+  },
+  "falso_MEL_taxa_com_vinheta": 0.17,
+  "falso_MEL_taxa_sem_vinheta": 0.10403225806451613
+}

@@ -1,0 +1,22 @@
+# EXPERIMENTO 1 — muda SÓ a função de perda: CE ponderada → focal loss.
+# Hipótese: a focal loss reduz o peso dos exemplos fáceis (NV) e melhora o macro-F1 e a revocação das classes raras.
+name: exp1_focal
+descricao: "Experimento 1 — igual ao baseline, troca CE ponderada por focal loss (gamma=2, mesmos pesos como alpha)"
+model:
+  arch: resnet18
+  pretrained: true          # transferência de aprendizado (pesos ImageNet)
+  dropout: 0.2              # antes da camada final
+loss:
+  name: focal               # focal loss
+  gamma: 2.0
+  class_weights: data/splits/class_weights_v1.json   # inverso da frequência (M2), contra o desbalanceamento de 58x
+optimizer:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 1.0e-4      # regularização L2 desacoplada
+scheduler: cosine           # decai a lr até ~0 ao longo das épocas
+batch_size: 32
+epochs: 25
+num_workers: 4
+seed: 42
+selection_metric: macro_f1  # época salva = maior macro-F1 na VALIDAÇÃO (teste nunca é olhado no treino)
